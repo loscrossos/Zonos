@@ -66,7 +66,10 @@ from sudachipy import Dictionary, SplitMode
 
 if sys.platform == "darwin":
     os.environ["PHONEMIZER_ESPEAK_LIBRARY"] = "/opt/homebrew/lib/libespeak-ng.dylib"
-
+elif sys.platform == "win32":
+    os.environ['PHONEMIZER_ESPEAK_PATH'] = f'C:\\Program Files\\eSpeak NG'
+    os.environ['PHONEMIZER_ESPEAK_LIBRARY'] = f'C:\\Program Files\\eSpeak NG\\libespeak-ng.dll'
+    
 # --- Number normalization code from https://github.com/daniilrobnikov/vits2/blob/main/text/normalize_numbers.py ---
 
 _inflect = inflect.engine()
