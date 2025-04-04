@@ -1,5 +1,3 @@
-#mamba: Apache-2.0 license, BSD-3-Clause license, CausalConv1d BSD-3-Clause license  
-#libraries for windows based on a rtx50 series torch build 
 #linux
 --extra-index-url=https://download.pytorch.org/whl/cu124; sys_platform == 'linux'
 
