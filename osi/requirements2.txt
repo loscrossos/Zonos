@@ -1,0 +1,57 @@
+#common
+packaging
+setuptools
+wheel
+inflect>=7.5.0
+kanjize>=1.5.0
+numpy>=2.2.2
+phonemizer>=3.3.0
+sudachidict-full>=20241021
+sudachipy>=0.6.10
+transformers>=4.48.1
+soundfile>=0.13.1
+huggingface-hub>=0.28.1
+gradio>=5.15.0
+
+
+#linux
+--extra-index-url=https://download.pytorch.org/whl/cu128; sys_platform == 'linux'
+#linux and macOS
+torch>=2.5.1; sys_platform != 'win32'
+torchaudio>=2.5.1; sys_platform != 'win32'
+
+flash-attn>=2.7.3 ; sys_platform != 'win32'
+mamba-ssm>=2.2.4 ; sys_platform != 'win32'
+causal-conv1d>=1.5.0.post8 ; sys_platform != 'win32'
+triton ; sys_platform != 'win32'
+
+
+
+
+
+#WINDOWS
+
+#Online
+#--extra-index-url=https://download.pytorch.org/whl/nightly/cu128 ; sys_platform == 'win32' #ngt
+#torch==2.8.0.dev20250402+cu128 ; sys_platform == 'win32' #ngt
+#torchaudio==2.6.0.dev20250403+cu128 ; sys_platform == 'win32' #ngt
+#torchvision==0.22.0.dev20250403+cu128 ; sys_platform == 'win32' #ngt
+
+
+#Offline
+torch ./xwhl/torch-2.8.0.dev20250402+cu128-cp310-cp310-win_amd64.whl; sys_platform == 'win32' # mn
+torchaudio ./xwhl/torchaudio-2.6.0.dev20250403+cu128-cp310-cp310-win_amd64.whl; sys_platform == 'win32' # mn
+torchvision ./xwhl/torchvision-0.22.0.dev20250403+cu128-cp310-cp310-win_amd64.whl; sys_platform == 'win32' # mn
+
+
+
+# mandatory offline packages  
+./xwhl/flash_attn-2.7.3-cp310-cp310-win_amd64.whl; sys_platform == 'win32' # mn
+./xwhl/mamba_ssm-2.2.4-cp310-cp310-win_amd64.whl; sys_platform == 'win32'  #mn
+./xwhl/causal_conv1d-1.1.1-cp310-cp310-win_amd64.whl; sys_platform == 'win32'  #mn
+./xwhl/triton-3.3.0-py3-none-any.whl ; sys_platform == 'win32'  # tw
+
+
+
+
+triton-windows==3.3.0a0.post17 ; sys_platform == 'win32' # tw

@@ -1,0 +1,13 @@
+#common
+packaging
+setuptools
+wheel
+
+
+#linux
+--extra-index-url=https://download.pytorch.org/whl/cu128; sys_platform == 'linux'
+#linux and macOS
+torch>=2.5.1; sys_platform != 'win32'
+torchaudio>=2.5.1; sys_platform != 'win32'
+
+
