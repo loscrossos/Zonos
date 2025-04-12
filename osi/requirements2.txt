@@ -36,9 +36,9 @@ torchaudio>=2.5.1; sys_platform != 'win32'
 #torchvision==0.22.0.dev20250403+cu128 ; sys_platform == 'win32' #ngt
 
 #Offline
-torch ./xwhl/torch-2.8.0.dev20250402+cu128-cp310-cp310-win_amd64.whl; sys_platform == 'win32' # mn
-torchaudio ./xwhl/torchaudio-2.6.0.dev20250403+cu128-cp310-cp310-win_amd64.whl; sys_platform == 'win32' # mn
-torchvision ./xwhl/torchvision-0.22.0.dev20250403+cu128-cp310-cp310-win_amd64.whl; sys_platform == 'win32' # mn
+./xwhl/torch-2.8.0.dev20250402+cu128-cp310-cp310-win_amd64.whl; sys_platform == 'win32' # mn
+./xwhl/torchaudio-2.6.0.dev20250403+cu128-cp310-cp310-win_amd64.whl; sys_platform == 'win32' # mn
+./xwhl/torchvision-0.22.0.dev20250403+cu128-cp310-cp310-win_amd64.whl; sys_platform == 'win32' # mn
 
 # mandatory offline packages  
 ./xwhl/flash_attn-2.7.3-cp310-cp310-win_amd64.whl; sys_platform == 'win32' # mn
