@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Get macOS version and architecture
+version=$(sw_vers -productVersion)
+arch=$(uname -m)
+
+# Convert version to comparable number (e.g., 12.4 -> 1204)
+ver_major=$(echo "$version" | cut -d '.' -f1)
+ver_minor=$(echo "$version" | cut -d '.' -f2)
+ver_number=$((10#$ver_major * 100 + 10#${ver_minor:-0}))
+
+# Compare to 12.4 -> 1204
+if [ "$ver_number" -ge 1204 ]; then
+if [ "$arch" = "arm64" ]; then
+#ARM START has python3 only on ARM
+echo "Apple Silicon (arm64)"
+
+#ARM END
+elif [ "$arch" = "x86_64" ]; then
+#X86 START has python3 only on x86
+echo "Intel (x86_64)"
+
+
+#X86 END
+else
+echo "macOS is >= 12.4 but on unknown architecture: $arch"
+fi
+else
+echo "macOS version ships with python2 (less than 12.4 ($version))"
+fi
